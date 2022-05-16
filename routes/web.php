@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/kedi', function(
+
+){
+    echo "sgddsgsdh";
+});
+
+Route::get('/home' , [CategoryController::class , "index"])->name("myhome");
