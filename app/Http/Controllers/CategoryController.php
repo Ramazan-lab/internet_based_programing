@@ -17,6 +17,19 @@ class CategoryController extends Controller
        return view('layouts.frontbase');
     }
 
+    public function homefonksiyonum(){
+        return view('home.index');
+    }
+
+    public function services(){
+        return view('home.servivePage');
+    }
+
+    public function about(){
+        return view('home.about');
+    }
+
+   
     /**
      * Show the form for creating a new resource.
      *

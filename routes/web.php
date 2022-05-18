@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\AdminPanelController;
 use App\Http\Controllers\CategoryController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[CategoryController::class,'homefonksiyonum'])->name('myperfectroot');
 
 Route::middleware([
     'auth:sanctum',
@@ -35,3 +35,15 @@ Route::get('/kedi', function(
 });
 
 Route::get('/home' , [CategoryController::class , "index"])->name("myhome");
+
+Route::get('/MYservices' , [CategoryController::class , "services"]);
+
+Route::get('/about' , [CategoryController::class , "about"]);
+
+Route::get('/services' , [CategoryController::class , "services"]);
+
+
+
+//********************ADMİN PANEL*************************/
+
+Route::get('/admin' , [AdminPanelController::class , "admin"]);
