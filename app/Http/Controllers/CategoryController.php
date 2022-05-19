@@ -12,23 +12,11 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-       return view('layouts.frontbase');
-    }
 
-    public function homefonksiyonum(){
-        return view('home.index');
-    }
+    public function index(){
 
-    public function services(){
-        return view('home.servivePage');
+        return view('admin.category.index');
     }
-
-    public function about(){
-        return view('home.about');
-    }
-
    
     /**
      * Show the form for creating a new resource.
@@ -37,7 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**

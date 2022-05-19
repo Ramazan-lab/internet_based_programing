@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPanel\AdminPanelController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[CategoryController::class,'homefonksiyonum'])->name('myperfectroot');
+Route::get('/',[HomeController ::class,'homefonksiyonum'])->name('myperfectroot');
 
 Route::middleware([
     'auth:sanctum',
@@ -34,16 +35,24 @@ Route::get('/kedi', function(
     echo "sgddsgsdh";
 });
 
-Route::get('/home' , [CategoryController::class , "index"])->name("myhome");
+Route::get('/home' , [HomeController::class , "index"])->name("myhome");
 
-Route::get('/MYservices' , [CategoryController::class , "services"]);
+Route::get('/MYservices' , [HomeController::class , "services"]);
 
-Route::get('/about' , [CategoryController::class , "about"]);
+Route::get('/about' , [HomeController::class , "about"]);
 
-Route::get('/services' , [CategoryController::class , "services"]);
+Route::get('/services' , [HomeController::class , "services"]);
 
 
 
 //********************ADMİN PANEL*************************/
 
 Route::get('/admin' , [AdminPanelController::class , "admin"]);
+
+
+//********************ADMİN category*************************/
+
+Route::get('/admin/category' , [CategoryController::class , "index"]);
+
+Route::get('/admin/category/create' , [CategoryController::class , "create"]);
+
