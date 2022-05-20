@@ -1,8 +1,5 @@
 @extends('layouts.AdminBase')
-@section('title','adminCategory')
+@section('title',"add category")
 @section('content')
-@section('admintitle' , 'admin create')
-
-
-
+@include('admin.input__form')
 @endsection

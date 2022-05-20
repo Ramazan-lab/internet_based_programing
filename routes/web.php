@@ -5,6 +5,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminPanel\CategoryController as adminCategoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -55,4 +57,19 @@ Route::get('/admin' , [AdminPanelController::class , "admin"]);
 Route::get('/admin/category' , [CategoryController::class , "index"]);
 
 Route::get('/admin/category/create' , [CategoryController::class , "create"]);
+
+Route::post('/admin/category/store' , [CategoryController::class , "store"]);
+
+Route::get('/admin/category/edit/{id}' , [CategoryController::class , "edit"]);
+
+Route::post('/admin/category/update/{id}' , [CategoryController::class , "update"]);
+
+
+Route::get('/admin/category/delete/{id}' , [CategoryController::class , "delete"]);
+
+Route::get('/admin/category/show/{id}' , [CategoryController::class , "show"]);
+
+
+
+
 
