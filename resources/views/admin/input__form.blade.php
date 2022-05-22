@@ -1,4 +1,7 @@
-<form role="form" action="/admin/category/store" method="POST">
+<div class="row"></a>edit category</div>
+
+
+<form role="form" action="{{route('admin.category.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
       <label for="exampleInputEmail1">Title</label>
@@ -20,9 +23,7 @@
                 <input type="file" class="custom-file-input" name="image">
                 <label for="exampleInpuFile" class="custom-file-label"> choose image file</label>
             </div>
-            <div class="input-group-append">
-                <span class="input-group-text" id="">upload</span>
-            </div>
+           
         </div>
       </div>
 

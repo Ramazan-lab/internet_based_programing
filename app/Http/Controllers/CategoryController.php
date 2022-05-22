@@ -51,9 +51,13 @@ class CategoryController extends Controller
 
         $data->status = $request->status;
 
+        if($request->file('image')){
+            $data->image=$request->file('image')->store('images');
+        }
+
         $data->save();
         
-       return redirect('admin/category');
+       return redirect(route('admin.category.index'));
 
     }
 
@@ -63,9 +67,12 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Category $category , $id)
     {
-        //
+        $data = Category::find($id);
+        return view('admin.category.show' , [
+            'data'=>$data
+        ]);
     }
 
     /**
@@ -103,6 +110,10 @@ class CategoryController extends Controller
 
         $data->status = $request->status;
 
+        if($request->file('image')){
+            $data->image=$request->file('image')->store('images');
+        }
+
         $data->save();
         
        return redirect('admin/category');
@@ -114,8 +125,10 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Category $category, $id)
     {
-        //
+        $data = Category::find($id);
+        $data->delete();
+        return redirect('admin/category');
     }
 }

@@ -5,7 +5,6 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminPanel\CategoryController as adminCategoryController;
 
 
 /*
@@ -39,6 +38,7 @@ Route::get('/kedi', function(
 
 Route::get('/home' , [HomeController::class , "index"])->name("myhome");
 
+
 Route::get('/MYservices' , [HomeController::class , "services"]);
 
 Route::get('/about' , [HomeController::class , "about"]);
@@ -46,30 +46,32 @@ Route::get('/about' , [HomeController::class , "about"]);
 Route::get('/services' , [HomeController::class , "services"]);
 
 
-
-//********************ADMİN PANEL*************************/
-
-Route::get('/admin' , [AdminPanelController::class , "admin"]);
+Route::prefix('admin')->name('admin.')->group(function () {
 
 
-//********************ADMİN category*************************/
+        //********************ADMİN PANEL*************************/
+        Route::get('/' , [AdminPanelController::class , "index"])->name('index');
+        
+        //********************ADMİN category*************************/
+    Route::prefix('category')->name('category.')->controller(CategoryController::class)->group(function () {
 
-Route::get('/admin/category' , [CategoryController::class , "index"]);
+        Route::get('/' ,  "index")->name('index');
 
-Route::get('/admin/category/create' , [CategoryController::class , "create"]);
+        Route::get('/create' ,  "create")->name('create');
 
-Route::post('/admin/category/store' , [CategoryController::class , "store"]);
+        Route::post('/store' , "store")->name('store');
 
-Route::get('/admin/category/edit/{id}' , [CategoryController::class , "edit"]);
+        Route::get('/edit/{id}' , "edit")->name('edit');
 
-Route::post('/admin/category/update/{id}' , [CategoryController::class , "update"]);
-
-
-Route::get('/admin/category/delete/{id}' , [CategoryController::class , "delete"]);
-
-Route::get('/admin/category/show/{id}' , [CategoryController::class , "show"]);
-
+        Route::post('/update/{id}' ,  "update")->name('update');
 
 
+        Route::get('/destroy/{id}' ,  "destroy")->name('destroy');
+
+        Route::get('/show/{id}' ,  "show")->name('show');
+
+
+});
+});
 
 

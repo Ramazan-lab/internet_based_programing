@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 
 class AdminPanelController extends Controller
 {
-    public function admin(){
+    public function index(){
         return view('admin.index');
     }
+
+   
 
 }
