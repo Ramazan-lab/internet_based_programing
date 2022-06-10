@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/treatment"
                         aria-expanded="false">
                         <i class="fa fa-font" aria-hidden="true"></i>
                         <span class="hide-menu">Treatment</span>
