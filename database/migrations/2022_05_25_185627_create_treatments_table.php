@@ -20,7 +20,7 @@ class CreateTreatmentsTable extends Migration
             $table->string("description");
             $table->string("image")->nullable();
             $table->foreignId("categoryid");
-            $table->string("detail");
+            $table->text("detail");
             $table->float("price")->nullable();
             $table->foreignId("userid");
             $table->boolean("status");

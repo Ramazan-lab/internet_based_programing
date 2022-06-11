@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPanel\AdminPanelController;
 use App\Http\Controllers\AdminPanel\adminTreatmentsController;
+use App\Http\Controllers\AdminPanel\imageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Models\Category;
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[HomeController ::class,'homefonksiyonum'])->name('myperfectroot');
+Route::get('/',[HomeController ::class,'index'])->name('myperfectroot');
 
 Route::middleware([
     'auth:sanctum',
@@ -31,20 +32,13 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/kedi', function(
-
-){
-    echo "sgddsgsdh";
-});
-
-Route::get('/home' , [HomeController::class , "index"])->name("myhome");
-
-
 Route::get('/MYservices' , [HomeController::class , "services"]);
 
 Route::get('/about' , [HomeController::class , "about"]);
 
 Route::get('/services' , [HomeController::class , "services"]);
+Route::get('/treatments' , [HomeController::class , "treatments"]);
+Route::get('/treatments/detail/{id}' , [HomeController::class , "treatmentDetail"])->name('home.treatments.detail');
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -92,7 +86,31 @@ Route::prefix('treatment')->name('treatment.')->controller(adminTreatmentsContro
     Route::get('/show/{id}' ,  "show")->name('show');
 
 
-});
+    });
+
+    //********************ADMİN treatments image*************************/
+
+    Route::prefix('image')->name('image.')->controller(imageController::class)->group(function () {
+
+        Route::get('/{tid}' ,  "index")->name('index');
+    
+        Route::get('/create/{tid}' ,  "create")->name('create');
+    
+        Route::post('/store/{tid}' , "store")->name('store');
+    
+       
+    
+        Route::post('/update//{tid}/{id}' ,  "update")->name('update');
+    
+    
+        Route::get('/destroy//{tid}/{id}' ,  "destroy")->name('destroy');
+    
+        
+    
+    
+    });
+
+
 });
 
 

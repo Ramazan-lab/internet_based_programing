@@ -32,13 +32,27 @@
 
       <div class="form-group">
         <label for="exampleInputEmail1">detail</label>
-        <input type="text" class="form-control"  placeholder="detail" name="detail">
+        <textarea class="form-control" name="detail" id="detail" cols="30" rows="10">
+
+        </textarea>    
+
+        <script>
+          ClassicEditor
+                  .create( document.querySelector( '#detail' ) )
+                  .then( editor => {
+                          console.log( editor );
+                  } )
+                  .catch( error => {
+                          console.error( error );
+                  } );
+  </script>
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">price</label>
         <input type="number" class="form-control"  placeholder="0" name="price">
-      </div>
+      
+  </div>
 
       
       <div class="form-group">

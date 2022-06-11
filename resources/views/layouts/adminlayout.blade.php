@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{asset('asset/admin')}}/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
     <link href="{{asset('asset/admin')}}/css/style.min.css" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 </head>
 <body>
     <!-- ============================================================== -->
