@@ -48,6 +48,7 @@ Route::get('/treatments/detail/{id}' , [HomeController::class , "treatmentDetail
 Route::get('/randevu' , [HomeController::class , "randevu"])->name('home.randevu');
 Route::get('/randevu/form' , [HomeController::class , "randevu_form"])->name('home.randevu.form');
 Route::get('/randevu/accept/{id}' , [HomeController::class , "randevu_accept"])->name('home.randevu.accept');
+Route::get('/home/randevu' , [HomeController::class , "home_randevu"]);
 
 
 

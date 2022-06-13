@@ -112,6 +112,15 @@ class HomeController extends Controller
         ]);
     }
 
-  
+    public function home_randevu(){
+        $randevulist=Randevu::where('status', 3)->get();
+
+        return view('home.myrandevu',[
+            'randevulist'=>$randevulist,
+        ]);
+        
+
+
+    }
    
 }
