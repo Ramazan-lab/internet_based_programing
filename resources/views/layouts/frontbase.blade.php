@@ -140,9 +140,12 @@
                             </div>
                             <!-- social -->
                             <div class="footer-social mt-50">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                <a href="/twitter"><i class="fab fa-twitter"></i><h1>{{ $settings->twitter }}</h1></a>
+                                <br/>
+                                <a href="/twitter"><i class="fab fa-facebook"></i><h1>{{ $settings->facebook }}</h1></a>
+                                <br/>
+                                <a href="/twitter"><i class="fab fa-instagram"></i><h1>{{ $settings->instagram }}</h1></a>
+
                             </div>
                         </div>
                     </div>

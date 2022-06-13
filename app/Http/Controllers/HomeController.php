@@ -13,10 +13,10 @@ class HomeController extends Controller
     public function index()
     {
         $sliderdata=Treatment::limit(4)->get();
-        
+        $settings=Setting::first();
        return view('home.index',[
         'sliderdata'=>$sliderdata,
-        
+         'settings'=>$settings
        ]);
     }
 
@@ -92,6 +92,24 @@ class HomeController extends Controller
         
 
 
+    }
+    public function twitter(){
+        $data1 = Setting::first()->twitter;
+        return view('layouts.frontbase',[
+            'data1'=>$data1
+        ]);
+    }
+    public function facebook(){
+        $data2 = Setting::first()->facebook;
+        return view('layouts.frontbase',[
+            'data2'=>$data2
+        ]);
+    }
+    public function instagram(){
+        $data3 = Setting::first()->instagram;
+        return view('layouts.frontbase',[
+            'data3'=>$data3
+        ]);
     }
 
   

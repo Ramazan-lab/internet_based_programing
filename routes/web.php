@@ -52,6 +52,7 @@ Route::get('/randevu/accept/{id}' , [HomeController::class , "randevu_accept"])-
 
 
 
+
 Route::prefix('admin')->name('admin.')->group(function () {
 
 
