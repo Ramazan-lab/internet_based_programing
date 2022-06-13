@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('asset/home')}}/assets/css/slick.css">
     <link rel="stylesheet" href="{{asset('asset/home')}}/assets/css/nice-select.css">
     <link rel="stylesheet" href="{{asset('asset/home')}}/assets/css/style.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 </head>
 <body>
     <!-- ? Preloader Start -->
@@ -54,9 +55,10 @@
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav> 
                                         <ul id="navigation">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="/">Home</a></li>
+                                            <li><a href="/about">About</a></li>
                                             <li><a href="/treatments">treatments</a></li>
+                                            <li><a href="/references">references</a></li>
                                             <li><a href="blog.html">Blog</a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">Blog</a></li>
@@ -64,13 +66,34 @@
                                                     <li><a href="elements.html">Element</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="/contact">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
+                                <li class="nav-item dropdown bg-warning">
+                                    @auth
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     <h3> {{ Auth::user()->name }}</h3>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/admin">Dashboard</a>
+                                        <a class="dropdown-item" href="/user/profile">Profile</a>
+                                        <form action="/logout" method="post">@csrf<button class="dropdown-item" type="submit">Log out</button></form>
+                                    </div>
+                                    @else
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       <h3> USER ISLEMLERI</h3>
+                                      </a>
+                                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/register">Sign up</a>
+                                        <a class="dropdown-item" href="/login">Log in</a>
+                                      </div>
+                                    @endauth
+                                  </li> 
                                 <div class="header-right-btn f-right d-none d-lg-block ml-15">
-                                    <a href="#" class="btn header-btn">Make an Appointment</a>
+                                    <a href="/randevu" class="btn header-btn">Make an Appointment</a>
                                 </div>
+                               
                             </div>
                         </div>   
                         <!-- Mobile Menu -->

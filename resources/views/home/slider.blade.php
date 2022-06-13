@@ -3,19 +3,16 @@
         
         @foreach ($sliderdata as $rs)
                
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="{{Storage::url($rs->image)}}" alt="">
-        <h5>{{ $rs->title }}</h5>
+      <div class="carousel-item @once active @endonce">
+        <h1 style="text-align: center; font-weight:700;   position: absolute; top: 50%;    left: 50%;
+        transform: translate(-50%, -50%); color:rgb(255, 255, 255); background-color:black; border-radius:20px; padding:10px">{{ $rs->title }}</h1>
+        <img class="d-block w-100" src="{{Storage::url($rs->image)}}" alt="" style="width: 100%; height:600px">
+        
       </div>
       
       @endforeach
 
-      <div class="carousel-item">
-        <img class="d-block w-100" src="..." alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="..." alt="Third slide">
-      </div>
+    
      
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

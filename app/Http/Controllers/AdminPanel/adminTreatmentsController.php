@@ -105,7 +105,7 @@ class adminTreatmentsController extends Controller
      * @param  \App\Models\treatment  $treatment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, treatment $treatment, $id, $category)
+    public function update(Request $request, treatment $treatment, Category $Category, $id  )
     {
         $data = treatment::find($id);
 
@@ -121,7 +121,7 @@ class adminTreatmentsController extends Controller
         if($request->file('image')){
             $data->image=$request->file('image')->store('images');
         }
-        $data->categoryid = Category::find($id);
+        $data->categoryid = $id;
 
         $data->detail = $request->detail;
 

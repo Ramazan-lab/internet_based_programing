@@ -44,7 +44,7 @@
                             <img src="{{asset('asset/home')}}/assets/img/gallery/team2.png" alt="">
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="#">Muscle Gain</a></h5>
+                            <h5><a href="#">çürük temizliği</a></h5>
                             <p>Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi 
                             sem ut ipsum.</p>
                         </div>
@@ -56,7 +56,7 @@
                             <img src="{{asset('asset/home')}}/assets/img/gallery/team3.png" alt="">
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="#">Weight Loss</a></h5>
+                            <h5><a href="#">diş eti aşınması </a></h5>
                             <p>Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi 
                             sem ut ipsum.</p>
                         </div>

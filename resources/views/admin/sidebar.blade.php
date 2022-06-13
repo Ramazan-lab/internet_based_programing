@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/randevu"
                         aria-expanded="false">
                         <i class="fa fa-globe" aria-hidden="true"></i>
                         <span class="hide-menu">Randevu</span>
@@ -81,7 +81,7 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.html"
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin/settings"
                         aria-expanded="false">
                         <i class="fa fa-info-circle" aria-hidden="true"></i>
                         <span class="hide-menu">settings</span>

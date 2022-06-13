@@ -1,8 +1,13 @@
 @extends('layouts.frontbase')
 @section('title','ANASAYFA')
 @section('content')
-@include('home.treatmentList')
+<div class="container">
+    <div class="row">
 
+ 
+@include('home.treatmentList')
+</div>
+</div>
 @include('home.about-area2')
 <!-- About-2 Area End -->
 @include('home.services')
